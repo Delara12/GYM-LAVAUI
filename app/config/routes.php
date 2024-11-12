@@ -45,6 +45,11 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
 $router->get('/', 'Auth');
 $router->get('/home', 'Home');
+$router->get('/about','AboutController');
+$router->get('/settings','settingsController');
+$router->get('/membership','memController');
+$router->get('/workout','workoutController');
+
 $router->group('/auth', function() use ($router){
     $router->match('/register', 'Auth::register', ['POST', 'GET']);
     $router->match('/login', 'Auth::login', ['POST', 'GET']);
