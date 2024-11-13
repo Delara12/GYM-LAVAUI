@@ -49,6 +49,12 @@ $router->get('/about','AboutController');
 $router->get('/settings','settingsController');
 $router->get('/membership','memController');
 $router->get('/workout','workoutController');
+$router->get('/contact','ContactController');
+$router->post('/contact/save', 'ContactController::save'); 
+
+
+
+
 
 $router->group('/auth', function() use ($router){
     $router->match('/register', 'Auth::register', ['POST', 'GET']);

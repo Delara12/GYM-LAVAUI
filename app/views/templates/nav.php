@@ -10,16 +10,16 @@
             <!-- Centered Navigation Links -->
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item mx-2">
-                    <a class="nav-link" href="<?=site_url('home');?>" style="color: #27ae60; font-size: 18px;">Home</a>
+                    <a class="nav-link" href="<?=site_url('/home');?>" style="color: #27ae60; font-size: 18px;">Home</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link" href="<?=site_url('about');?>" style="color: #27ae60; font-size: 18px;">About Us</a>
+                    <a class="nav-link" href="<?=site_url('/about');?>" style="color: #27ae60; font-size: 18px;">About Us</a>
                 </li>
                 <li class="nav-item mx-2">
                     <a class="nav-link" href="<?=site_url('blogs');?>" style="color: #27ae60; font-size: 18px;">Blogs</a>
                 </li>
                 <li class="nav-item mx-2">
-                    <a class="nav-link" href="<?=site_url('contact');?>" style="color: #27ae60; font-size: 18px;">Contact Us</a>
+                    <a class="nav-link" href="<?=site_url('/contact');?>" style="color: #27ae60; font-size: 18px;">Contact Us</a>
                 </li>
             </ul>
             <!-- Right Side Of Navbar -->
