@@ -18,7 +18,7 @@
                                     <a class="nav-link" href="/membership">Membership Plans</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Instructors</a>
+                                    <a class="nav-link" href="/instructor">Instructors</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/workout">Workout Programs</a>
@@ -27,7 +27,7 @@
                                     <a class="nav-link" href="/settings">Settings</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Reports</a>
+                                    <a class="nav-link" href="instructor_table">Reports</a>
                                 </li>
                             </ul>
                         </div>

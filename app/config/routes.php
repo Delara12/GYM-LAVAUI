@@ -52,7 +52,21 @@ $router->get('/workout','workoutController');
 $router->get('/contact','ContactController');
 $router->post('/contact/save', 'ContactController::save'); 
 
+/**Instructors */
+$router->get('/instructor','InstructorController');
+$router->post('/instructor/save', 'InstructorController::save'); 
 
+$router->get('/instructor/list', 'InstructorController::showInstructors'); // Add this route
+
+/**table */
+$router->get('/', 'InstructorController::instructor_table');
+$router->get('/instructor_table', 'InstructorController::instructor_table');
+$router->get('/instructor_table/delete/{id}', 'InstructorController::delete');
+/*
+$router->get('/instructor', 'InstructorController::showInstructors'); // Route to show instructor list
+$router->get('/instructor/add', 'InstructorController::addForm'); // Route to show form for adding instructor
+$router->post('/instructor/save', 'InstructorController::save'); // Route to handle form submission and save instructor
+*/
 
 
 
