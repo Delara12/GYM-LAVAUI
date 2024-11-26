@@ -42,15 +42,17 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 |
 |
 */
-
 $router->get('/', 'Auth');
 $router->get('/home', 'Home');
 $router->get('/about','AboutController');
+$router->get('/blogs','BlogsController');
 $router->get('/settings','settingsController');
 $router->get('/membership','memController');
+$router->get('/dashboard', 'DashboardController');
 $router->get('/workout','workoutController');
 $router->get('/contact','ContactController');
-$router->post('/contact/save', 'ContactController::save'); 
+$router->post('/contact/save', 'ContactController::save');
+
 
 /**Instructors */
 $router->get('/instructor','InstructorController');
@@ -67,6 +69,10 @@ $router->get('/instructor', 'InstructorController::showInstructors'); // Route t
 $router->get('/instructor/add', 'InstructorController::addForm'); // Route to show form for adding instructor
 $router->post('/instructor/save', 'InstructorController::save'); // Route to handle form submission and save instructor
 */
+
+$router->get('/contactlist_table', 'ContactController::showContactList');  // Contact List Table route
+$router->get('/contactlist_table', 'ContactController::showContactList'); // Add this route
+
 
 
 

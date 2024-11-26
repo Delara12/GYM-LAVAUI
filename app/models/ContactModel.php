@@ -22,3 +22,4 @@ class ContactModel extends Model {
     }
 }
 ?>
+z

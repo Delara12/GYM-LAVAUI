@@ -1,3 +1,7 @@
+<?php 
+include APP_DIR . 'views/templates/header.php'; 
+include APP_DIR . 'views/templates/nav.php'; // Include the navigation bar
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,30 +15,41 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <style>
         body {
-            background-color: #B7B7B7;
+            background-color: #DFF6DD; /* Light green background */
         }
 
         .container {
-            background-color: #E5D9F2;
+            background-color: #E8F5E9; /* Very light green */
             padding: 30px;
             border-radius: 10px;
+            border: 2px solid gray; /* Gray border */
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
-            color: #333;
+            color: #2E7D32; /* Dark green */
             margin-bottom: 30px;
             text-align: center;
         }
 
         .btn-primary {
-            background-color: #4CAF50;
-            border-color: #4CAF50;
+            background-color: #007BFF; /* Blue color */
+            border-color: #007BFF;
             transition: background-color 0.3s ease;
         }
 
         .btn-primary:hover {
-            background-color: #45a049;
+            background-color: #0056b3; /* Darker blue */
+        }
+
+        .btn-secondary {
+            background-color: #6C757D; /* Gray */
+            border-color: #6C757D;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #565E64; /* Darker gray */
         }
 
         .dataTables_wrapper .dataTables_paginate .paginate_button {
@@ -43,16 +58,16 @@
         }
 
         .table thead {
-            background-color: #343a40;
+            background-color: #2E7D32; /* Dark green */
             color: white;
         }
 
         .table-striped>tbody>tr:nth-of-type(odd) {
-            background-color: #f8f9fa;
+            background-color: #E8F5E9; /* Very light green for odd rows */
         }
 
         .table-hover tbody tr:hover {
-            background-color: #e9ecef;
+            background-color: #C8E6C9; /* Light green for hover */
         }
 
         .table td,
@@ -61,13 +76,13 @@
         }
 
         td a {
-            color: #4CAF50;
+            color: #007BFF; /* Blue color */
             text-decoration: none;
             margin-right: 10px;
         }
 
         td a:hover {
-            color: #45a049;
+            color: #0056b3; /* Darker blue */
         }
     </style>
 </head>
@@ -76,6 +91,7 @@
 
     <div class="container my-5">
         <h2>Instructors</h2>
+        <a class="btn btn-secondary mb-4" role="button" href="<?= site_url('instructor'); ?>">Back</a>
         <a class="btn btn-primary mb-4" role="button" href="<?= site_url('instructor'); ?>">Create Instructor</a>
 
         <table id="instructorTable" class="table table-bordered table-striped table-hover">
