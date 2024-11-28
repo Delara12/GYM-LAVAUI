@@ -1,6 +1,7 @@
 <?php 
 include APP_DIR . 'views/templates/header.php'; 
 include APP_DIR . 'views/templates/nav.php'; // Include the navigation bar
+include APP_DIR . 'views/templates/sidebar.php'; 
 ?>
 <body>
     <div id="app">

@@ -91,4 +91,9 @@
 .navbar-nav .nav-item:last-child {
     margin-right: 0; /* Ensure no margin on the last item */
 }
+.navbar{
+position: fixed;
+width: 100%;
+} 
+
 </style>   

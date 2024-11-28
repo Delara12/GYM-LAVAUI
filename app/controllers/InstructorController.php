@@ -9,12 +9,19 @@ class InstructorController extends Controller {
         $this->call->model('InstructorModel');   
     }
 
+    public function getInstructorData()
+    {
+        $InstructorModel = new instructor();
+        $data = $InstructorModel->getInstructorsByDepartment();
+
+        // Return JSON response
+        echo json_encode($data);
+    }
+
     public function instructor_table()
     {
         $data['instructors'] = $this->InstructorModel->instructor_table();
         $this->call->view('instructor_table', $data);
-
-        $this->call->view('instructor_table');
     }
 
     public function delete($id)
@@ -26,25 +33,48 @@ class InstructorController extends Controller {
         }
     }
 
-
-    public function index() {
-        $this->call->view('instructor');  // Assuming the view is now for instructors
+    public function index()
+    {
+        $this->call->view('instructor');  // Assuming the view is for instructors
     }
 
-    public function save() {
+    public function save()
+    {
         if($this->form_validation->submitted())
         {
             $instructorName = $this->io->post('instructorName');
             $instructorEmail = $this->io->post('instructorEmail');
             $instructorPhone = $this->io->post('instructorPhone');
             $instructorSpecialty = $this->io->post('instructorSpecialty');
+
+            if ($this->InstructorModel->saveInstructorInfo($instructorName, $instructorEmail, $instructorPhone, $instructorSpecialty)) {
+                set_flash_alert('success!', 'Instructor information saved successfully.');
+                redirect('instructor');
+            } else {
+                echo "Failed to save instructor information.";
+            }
         }
-        
-        if ($this->InstructorModel->saveInstructorInfo($instructorName, $instructorEmail, $instructorPhone, $instructorSpecialty)) {
-            redirect('instructor');  // Redirecting to the instructor page
-            set_flash_alert('success!', 'Instructor information saved successfully.');
+    }
+
+    public function update($id)
+    {
+        if($this->form_validation->submitted())
+        {
+            $instructorName = $this->io->post('instructorName');
+            $instructorEmail = $this->io->post('instructorEmail');
+            $instructorPhone = $this->io->post('instructorPhone');
+            $instructorSpecialty = $this->io->post('instructorSpecialty');
+
+            if ($this->InstructorModel->updateInstructorInfo($id, $instructorName, $instructorEmail, $instructorPhone, $instructorSpecialty)) {
+                set_flash_alert('success!', 'Instructor information updated successfully.');
+                redirect('instructor_table');
+            } else {
+                set_flash_alert('error!', 'Failed to update instructor information.');
+                redirect('instructor_table');
+            }
         } else {
-            echo "Failed to save instructor information.";
+            $data['instructor'] = $this->InstructorModel->getInstructorById($id);
+            $this->call->view('instructor_update', $data);
         }
     }
 }

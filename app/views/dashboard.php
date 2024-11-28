@@ -10,10 +10,9 @@ include APP_DIR . 'views/templates/header.php';
         ?>
 
         <!-- Main layout container -->
-        <div class="main-container d-flex">
             <!-- Include the sidebar navigation -->
             <?php
-            include APP_DIR . 'views/templates/sidenav.php'; // Sidebar navigation
+            include APP_DIR . 'views/templates/sidebar.php'; // Sidebar navigation
             ?>
 
             <!-- Main content area -->
@@ -89,6 +88,62 @@ include APP_DIR . 'views/templates/header.php';
         });
     </script>
 
+<div class="chart-container card p-3 m-3">
+    <h2>Instructors by Department</h2>
+    <canvas id="instructorChart"></canvas>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('/instructor/data')
+            .then(response => response.json())
+            .then(data => {
+                const labels = data.map(item => item.department);
+                const counts = data.map(item => item.count);
+
+                const instructorCtx = document.getElementById('instructorChart').getContext('2d');
+                new Chart(instructorCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Instructors by Department',
+                            data: counts,
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.6)',
+                                'rgba(54, 162, 235, 0.6)',
+                                'rgba(75, 192, 192, 0.6)',
+                                'rgba(153, 102, 255, 0.6)',
+                                'rgba(255, 159, 64, 0.6)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Instructors by Department'
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching instructor data:', error));
+    });
+</script>
+
     <style>
         /* Align the main container */
         .main-container {
@@ -136,6 +191,7 @@ include APP_DIR . 'views/templates/header.php';
             flex: 1;
             background-color: #ffffff; /* White background for content */
             color: #343a40; /* Dark text color */
+            margin-top: 10vh;
         }
 
         /* Chart container styling */
@@ -150,6 +206,7 @@ include APP_DIR . 'views/templates/header.php';
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: inherit;
         }
 
         /* Dashboard title */

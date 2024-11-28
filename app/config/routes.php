@@ -63,7 +63,12 @@ $router->get('/instructor/list', 'InstructorController::showInstructors'); // Ad
 /**table */
 $router->get('/', 'InstructorController::instructor_table');
 $router->get('/instructor_table', 'InstructorController::instructor_table');
-$router->get('/instructor_table/delete/{id}', 'InstructorController::delete');
+$router->get('/instructor/delete/{id}', 'InstructorController::delete');
+
+$router->match('/instructor/update/{id}', 'InstructorController::update', 'GET|POST');
+
+
+$router->get('/instructor/data', 'InstructorController::getInstructorData');
 /*
 $router->get('/instructor', 'InstructorController::showInstructors'); // Route to show instructor list
 $router->get('/instructor/add', 'InstructorController::addForm'); // Route to show form for adding instructor
