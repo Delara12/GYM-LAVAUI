@@ -6,7 +6,7 @@ include APP_DIR . 'views/templates/header.php'; // Include header
         <?php
         include APP_DIR . 'views/templates/nav.php'; // Include navigation
         ?>
-
+<br>
         <!-- Main Content Section -->
         <div class="container-fluid" style="visibility: hidden;" id="main-content">
             <div class="row justify-content-center">

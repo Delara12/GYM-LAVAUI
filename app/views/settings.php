@@ -16,26 +16,79 @@ include APP_DIR . 'views/templates/header.php';
                 include APP_DIR . 'views/templates/sidenav.php'; // Include sidenav.php here (sidebar)
                 ?>  
 
-                <!-- Main content for Settings Page -->
+                <!-- Main content for User Settings Page -->
                 <div class="col-md-9 ms-sm-auto col-lg-10 main-content">
                     <div class="container">
-                        <h2 class="mt-4">Gym Fitness Settings</h2>
-                        <p>Manage all your gym settings here, including membership options, workout programs, instructor schedules, and more.</p>
+                        <h2 class="mt-4">Gym User Settings</h2>
+                        <p>Customize your gym experience by adjusting your personal preferences and notification settings.</p>
                         
                         <form action="#" method="POST">
                             <div class="mb-3">
-                                <label for="membershipFees" class="form-label">Membership Fees</label>
-                                <input type="number" class="form-control" id="membershipFees" name="membershipFees">
+                                <label for="preferredWorkoutTime" class="form-label">Preferred Workout Time</label>
+                                <select class="form-select" id="preferredWorkoutTime" name="preferredWorkoutTime" required>
+                                    <option value="">Choose...</option>
+                                    <option value="early_morning">Early Morning (5AM - 8AM)</option>
+                                    <option value="morning">Morning (8AM - 11AM)</option>
+                                    <option value="afternoon">Afternoon (11AM - 3PM)</option>
+                                    <option value="evening">Evening (3PM - 7PM)</option>
+                                    <option value="night">Night (7PM - Close)</option>
+                                </select>
                             </div>
 
                             <div class="mb-3">
-                                <label for="openingHours" class="form-label">Opening Hours</label>
-                                <input type="text" class="form-control" id="openingHours" name="openingHours" placeholder="e.g., 6:00 AM - 10:00 PM">
+                                <label for="fitnessGoal" class="form-label">Primary Fitness Goal</label>
+                                <select class="form-select" id="fitnessGoal" name="fitnessGoal" required>
+                                    <option value="">Choose...</option>
+                                    <option value="weight_loss">Weight Loss</option>
+                                    <option value="muscle_gain">Muscle Gain</option>
+                                    <option value="endurance">Endurance</option>
+                                    <option value="flexibility">Flexibility</option>
+                                    <option value="general_fitness">General Fitness</option>
+                                </select>
                             </div>
 
                             <div class="mb-3">
-                                <label for="instructorSchedules" class="form-label">Instructor Schedules</label>
-                                <textarea class="form-control" id="instructorSchedules" name="instructorSchedules" rows="3" placeholder="List of instructor schedules"></textarea>
+                                <label for="preferredClasses" class="form-label">Preferred Classes</label>
+                                <select class="form-select" id="preferredClasses" name="preferredClasses[]" multiple required>
+                                    <option value="yoga">Yoga</option>
+                                    <option value="spinning">Spinning</option>
+                                    <option value="zumba">Zumba</option>
+                                    <option value="pilates">Pilates</option>
+                                    <option value="hiit">HIIT</option>
+                                    <option value="strength_training">Strength Training</option>
+                                </select>
+                                <small class="form-text text-muted">Hold Ctrl (Windows) or Command (Mac) to select multiple options.</small>
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="personalTrainer" name="personalTrainer">
+                                <label class="form-check-label" for="personalTrainer">Interested in Personal Training</label>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Notification Preferences</label>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="notifyClassReminders" name="notifications[]" value="class_reminders">
+                                    <label class="form-check-label" for="notifyClassReminders">Class Reminders</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="notifySpecialOffers" name="notifications[]" value="special_offers">
+                                    <label class="form-check-label" for="notifySpecialOffers">Special Offers</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="notifyMembershipRenewal" name="notifications[]" value="membership_renewal">
+                                    <label class="form-check-label" for="notifyMembershipRenewal">Membership Renewal</label>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="privacySettings" class="form-label">Privacy Settings</label>
+                                <select class="form-select" id="privacySettings" name="privacySettings" required>
+                                    <option value="">Choose...</option>
+                                    <option value="public">Public Profile</option>
+                                    <option value="friends">Friends Only</option>
+                                    <option value="private">Private</option>
+                                </select>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Save Settings</button>
@@ -94,28 +147,27 @@ include APP_DIR . 'views/templates/header.php';
             overflow-y: auto;
         }
 
-        /* Card styling */
-        .card {
-            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
-            border-radius: 8px;
-            color: black;
+        /* Form styling */
+        .form-control, .form-select {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #9acb8c;
         }
 
-        .card-header {
-            font-size: 1.25rem;
-        }
-
-        .card-title {
-            color: black;
-        }
-
-        .card-text {
-            color: black;
+        .form-control:focus, .form-select:focus {
+            background-color: #ffffff;
+            border-color: #6c9e52;
+            box-shadow: 0 0 0 0.2rem rgba(108, 158, 82, 0.25);
         }
 
         /* Button styling */
         .btn-primary {
-            color: white;
+            background-color: #6c9e52;
+            border-color: #6c9e52;
+        }
+
+        .btn-primary:hover {
+            background-color: #5a8344;
+            border-color: #5a8344;
         }
     </style>
 </body>

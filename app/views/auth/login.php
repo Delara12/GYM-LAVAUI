@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>  
+    <title>Login - DEMM FITNESS GYM</title>  
     <link rel="icon" type="image/png" href="<?=base_url();?>public/img/favicon.ico"/>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -11,6 +11,8 @@
     <!-- Styles -->
     <link href="<?=base_url();?>public/css/main.css" rel="stylesheet">
     <link href="<?=base_url();?>public/css/style.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <?php
@@ -20,27 +22,32 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">Login</div>
+                    <div class="card login-card">
+                        <div class="card-header">Login to DEMM FITNESS GYM</div>
                         <div class="card-body">
-                          	<?php flash_alert() ;?>
+                            <?php flash_alert(); ?>
                             <form id="logForm" method="POST" action="<?=site_url('auth/login');?>">
                                 <?php csrf_field(); ?>
                                 <div class="row mb-3">
                                     <label for="email" class="col-md-4 col-form-label text-md-end">Email Address</label>
                                     <div class="col-md-6">
                                         <?php $LAVA =& lava_instance(); ?>
-                                        <input id="email" type="email" class="form-control <?=$LAVA->session->flashdata('is_invalid');?>" name="email" value="" required autocomplete="email" autofocus>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                            <input id="email" type="email" class="form-control <?=$LAVA->session->flashdata('is_invalid');?>" name="email" value="" required autocomplete="email" autofocus>
+                                        </div>
                                         <span class="invalid-feedback" role="alert">
-                                            <strong> <?php echo $LAVA->session->flashdata('err_message'); ?></strong>
+                                            <strong><?php echo $LAVA->session->flashdata('err_message'); ?></strong>
                                         </span>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="password" class="col-md-4 col-form-label text-md-end">Password</label>
-
                                     <div class="col-md-6">
-                                        <input id="password" type="password" class="form-control " name="password" minlength="8" required autocomplete="current-password">
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                            <input id="password" type="password" class="form-control" name="password" minlength="8" required autocomplete="current-password">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row mb-0">
@@ -49,11 +56,10 @@
                                             Login
                                         </button>
                                         
-                                        <a href="<?=site_url('auth/password-reset');?>">
+                                        <a href="<?=site_url('auth/password-reset');?>" class="btn btn-link">
                                             Forgot Your Password?
                                         </a>
                                     </div>
-                                    
                                 </div>
                             </form>
                         </div>
@@ -90,5 +96,75 @@
                 }
         })
     </script>
+    <style>
+        body {
+            font-family: 'Nunito', Arial, sans-serif;
+            background-color: #F1F1F1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 0 15px;
+        }
+
+        .login-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card-header {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1.5rem;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .form-control {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        .input-group-text {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            color: #4CAF50;
+        }
+
+        .btn-primary {
+            background-color: #007BFF;
+            border-color: #007BFF;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-link {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .btn-link:hover {
+            text-decoration: underline;
+        }
+
+        .invalid-feedback {
+            color: #dc3545;
+            font-size: 0.875rem;
+        }
+    </style>
 </body>
 </html>
