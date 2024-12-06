@@ -7,7 +7,8 @@ include APP_DIR . 'views/templates/header.php'; // Include the header
         <?php 
         include APP_DIR . 'views/templates/nav.php'; // Assuming nav.php contains the header and main navigation
         ?>
-
+<br>
+<br>
         <!-- The rest of your content for the about page goes here -->
         <div class="container">
             <section class="about-content">

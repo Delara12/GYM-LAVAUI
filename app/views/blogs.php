@@ -7,6 +7,7 @@ include APP_DIR . 'views/templates/header.php';
         <?php
         include APP_DIR . 'views/templates/nav.php'; // Assuming nav.php contains the header and main navigation
         ?>
+<br>
 
         <div class="container-fluid">
             <div class="row">
