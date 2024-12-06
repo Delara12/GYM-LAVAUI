@@ -7,7 +7,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
     <!-- head contents -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym Dashboard - Add Instructor</title>
+    <title>Gym Dashboard - Add Member</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
@@ -167,18 +167,13 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#members">
-                                <i class="fas fa-users"></i> Members
+                            <a class="nav-link active" href="add_member">
+                                <i class="fas fa-users"></i> Add Member
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#classes">
                                 <i class="fas fa-dumbbell"></i> Classes
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="instructor">
-                                <i class="fas fa-chalkboard-teacher"></i> Instructors
                             </a>
                         </li>
                         <li class="nav-item">
@@ -194,43 +189,52 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             <div class="main-content">
                 <!-- Form Container -->
                 <div class="form-container">
-                    <h2>Add New Instructor</h2>
+                    <h2>Add New Member</h2>
 
                     <!-- Form -->
-                    <form action="<?= site_url('instructor/save') ?>" method="POST" enctype="multipart/form-data">
+                    <form action="<?= site_url('members/save') ?>" method="POST" enctype="multipart/form-data">
                         <div class="mb-3">
-                            <label for="instructorName" class="form-label">Instructor Name</label>
-                            <input type="text" class="form-control" id="instructorName" name="instructorName" placeholder="e.g., John Doe" required>
+                            <label for="First_name" class="form-label">Member Name</label>
+                            <input type="text" class="form-control" id="First_name" name="First_name" placeholder="e.g., John Doe" required>
                         </div>
 
                         <div class="mb-3">
-                            <label for="instructorAge" class="form-label">Instructor Age</label>
-                            <input type="age" class="form-control" id="instructorAge" name="instructorAge" placeholder="e.g., 21" required>
+                            <label for="Last_name" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="Last_name" name="Last_name" placeholder="e.g., Doe" required>
                         </div>
 
                         <div class="mb-3">
-                            <label for="instructorEmail" class="form-label">Instructor Email</label>
-                            <input type="email" class="form-control" id="instructorEmail" name="instructorEmail" placeholder="e.g., john.doe@example.com" required>
+                            <label for="Age" class="form-label">Member Age</label>
+                            <input type="number" class="form-control" id="Age" name="Age" placeholder="e.g., 25" required>
                         </div>
 
                         <div class="mb-3">
-                            <label for="instructorPhone" class="form-label">Instructor Phone Number</label>
-                            <input type="tel" class="form-control" id="instructorPhone" name="instructorPhone" placeholder="e.g., +1 234 567 890" required>
+                            <label for="Gender" class="form-label">Gender</label>
+                            <select class="form-control" id="Gender" name="Gender" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
                         </div>
 
                         <div class="mb-3">
-                            <label for="instructorSpecialty" class="form-label">Specialty</label>
-                            <input type="text" class="form-control" id="instructorSpecialty" name="instructorSpecialty" placeholder="e.g., Yoga, Pilates, Strength Training" required>
+                            <label for="Email" class="form-label">Member Email</label>
+                            <input type="email" class="form-control" id="Email" name="Email" placeholder="e.g., john.doe@example.com" required>
                         </div>
 
                         <div class="mb-3">
-                            <label for="instructorImage" class="form-label">Instructor Image</label>
-                            <input type="file" class="form-control" id="instructorImage" name="instructorImage" accept="image/*">
+                            <label for="Phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="Phone" name="Phone" placeholder="e.g., +1 234 567 890" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Address" class="form-label">Address</label>
+                            <textarea class="form-control" id="Address" name="Address" rows="3" placeholder="Member Address" required></textarea>
                         </div>
 
                         <div class="btn-container">
-                            <button type="submit" class="btn btn-primary">Save Instructor</button>
-                            <a class="btn btn-secondary" href="<?= site_url('instructor_table'); ?>">View Instructors</a>
+                            <button type="submit" class="btn btn-primary">Save Member</button>
+                            <a class="btn btn-secondary" href="<?= site_url('member_table'); ?>">View Members</a>
                         </div>
                     </form>
                 </div>

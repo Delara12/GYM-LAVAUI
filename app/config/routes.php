@@ -52,6 +52,13 @@ $router->get('/dashboard', 'DashboardController');
 $router->get('/workout','workoutController');
 $router->get('/contact','ContactController');
 $router->post('/contact/save', 'ContactController::save');
+$router->get('/landingpage', 'LandingController');
+
+$router->get('/', 'GymController::dashboard');
+$router->get('/gym_dashboard', 'GymController::dashboard');
+$router->get('/tableinstructordash', 'GymController::tableinstructordash');
+$route['instructor-dashboard'] = 'GymController/tableinstructordash';
+$route['dashboard'] = 'GymController/dashboard';
 
 
 /**Instructors */
@@ -64,11 +71,20 @@ $router->get('/instructor/list', 'InstructorController::showInstructors'); // Ad
 $router->get('/', 'InstructorController::instructor_table');
 $router->get('/instructor_table', 'InstructorController::instructor_table');
 $router->get('/instructor/delete/{id}', 'InstructorController::delete');
-
 $router->match('/instructor/update/{id}', 'InstructorController::update', 'GET|POST');
 
+/**members */
+/**$router->get('/members','MembersController');
+$router->post('/members/save', 'MembersController::save'); 
 
-$router->get('/instructor/data', 'InstructorController::getInstructorData');
+$router->get('/members', 'MembersController::index');
+
+$router->get('/instructor/data', 'InstructorController::getInstructorData');*/
+
+
+$router->get('/members', 'MembersController::index');
+$router->get('/members/add_member', 'MembersController::add_member');
+$router->post('/members/save', 'MembersController::save');
 /*
 $router->get('/instructor', 'InstructorController::showInstructors'); // Route to show instructor list
 $router->get('/instructor/add', 'InstructorController::addForm'); // Route to show form for adding instructor
