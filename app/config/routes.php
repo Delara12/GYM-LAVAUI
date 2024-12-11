@@ -47,6 +47,7 @@ $router->get('/', 'LandingController');
 //$router->get('/', 'Auth');
 $router->get('/home', 'Home');
 $router->get('/about','AboutController');
+$router->get('/class','classController');
 $router->get('/blogs','BlogsController');
 $router->get('/settings','settingsController');
 $router->get('/membership','memController');

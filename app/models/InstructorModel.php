@@ -23,11 +23,11 @@ class InstructorModel extends Model {
     }
 
     // Save instructor info, including image
-    public function saveInstructorInfo($instructorAge, $instructorName, $instructorEmail, $instructorPhone, $instructorSpecialty, $instructorImage = 'default-avatar.jpg') 
+    public function saveInstructorInfo($instructorName, $instructorAge, $instructorEmail, $instructorPhone, $instructorSpecialty, $instructorImage = 'default-avatar.jpg') 
     {
         $data = array(
-            'instructor_age' => $instructorAge,
             'instructor_name' => $instructorName,
+            'instructor_age' => $instructorAge,
             'instructor_email' => $instructorEmail,
             'instructor_phone' => $instructorPhone,
             'instructor_specialty' => $instructorSpecialty,

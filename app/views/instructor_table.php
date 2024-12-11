@@ -289,7 +289,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                     <hr>
                     <p><strong>Additional Info:</strong></p>
                     <ul>
-                        <li><strong>Age:</strong> <span id="instructorAge">0</span></li>
+                        <li><strong>Name:</strong> <span id="instructorAge">0</span></li>
                         <li><strong>Phone Number:</strong> <span id="instructorPhone">0</span></li>
                         <li><strong>Email:</strong> <span id="instructorEmail">0</span></li>
                     </ul>

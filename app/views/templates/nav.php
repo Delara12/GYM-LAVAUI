@@ -30,13 +30,10 @@
                     <a class="nav-link" href="<?=site_url('blogs');?>" style="color: #27ae60; font-size: 18px;">Blogs</a>
                 </li>
                 <li class="nav-item mx-3">
-                    <a class="nav-link" href="<?=site_url('/contact');?>" style="color: #27ae60; font-size: 18px;">Contact Us</a>
+                    <a class="nav-link" href="<?=site_url('/dashboard');?>" style="color: #27ae60; font-size: 18px;">User Dashboard</a>
                 </li>
-                <!-- Dashboard Link with Text -->
                 <li class="nav-item mx-3">
-                    <a class="nav-link" href="<?=site_url('/dashboard');?>" style="color: #27ae60; font-size: 18px;">
-                        <i class="fas fa-tachometer-alt" style="font-size: 22px;"></i> Dashboard <!-- Added text here -->
-                    </a>
+                    <a class="nav-link" href="<?=site_url('/contact');?>" style="color: #27ae60; font-size: 18px;">Contact Us</a>
                 </li>
             </ul>
             <!-- Right Side Of Navbar -->
@@ -55,6 +52,10 @@
                         <?=html_escape(get_username(get_user_id()));?>
                     </a>
                 </li>
+                <!-- Completely Invisible Dashboard Link -->
+                <li class="nav-item">
+                    <a class="nav-link invisible-dashboard" href="<?=site_url('/tableinstructordash');?>" aria-label="Dashboard"></a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?=site_url('auth/logout');?>" style="color: #6ab04c; font-size: 18px;">Logout</a>
                 </li>
@@ -65,35 +66,52 @@
 </nav>
 
 <style>
-/* Ensure the hamburger icon is visible */
+/* Existing styles */
 .navbar-toggler .fas.fa-bars {
-    font-size: 24px; /* Adjust the size of the hamburger icon */
-    color: #27ae60; /* Match the color theme */
+    font-size: 24px;
+    color: #27ae60;
 }
 
-/* Optional: style for the navbar items */
 .navbar-nav .nav-item .nav-link {
     font-size: 18px;
 }
 
-/* Optional: style for navbar items on hover */
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus {
     background-color: #c7ecee;
     border-radius: 5px;
 }
 
-/* Optional: Adjust margin between navbar items */
 .navbar-nav .nav-item {
     margin-right: 20px;
 }
 
 .navbar-nav .nav-item:last-child {
-    margin-right: 0; /* Ensure no margin on the last item */
+    margin-right: 0;
 }
-.navbar{
-position: fixed;
-width: 100%;
-} 
 
-</style>   
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Styles for completely invisible dashboard link */
+.invisible-dashboard {
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    padding: 0;
+    margin: 0;
+    background-color: transparent !important;
+    color: transparent !important;
+    cursor: pointer;
+}
+
+.invisible-dashboard:hover,
+.invisible-dashboard:focus {
+    background-color: transparent !important;
+    color: transparent !important;
+    outline: none;
+}
+</style>
+

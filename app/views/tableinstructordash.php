@@ -110,12 +110,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#members">
+                            <a class="nav-link" href="member">
                                 <i class="fas fa-users"></i> Members
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#classes">
+                            <a class="nav-link" href="class">
                                 <i class="fas fa-dumbbell"></i> Classes
                             </a>
                         </li>

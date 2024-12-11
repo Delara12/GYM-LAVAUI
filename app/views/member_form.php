@@ -172,7 +172,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#classes">
+                            <a class="nav-link" href="class">
                                 <i class="fas fa-dumbbell"></i> Classes
                             </a>
                         </li>
