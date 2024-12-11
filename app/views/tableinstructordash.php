@@ -1,7 +1,3 @@
-<?php
-defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,6 +78,16 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             background-color: #4CAF50;
             color: white;
             border-radius: 5px;
+        }
+
+        /* Hide the instructor table */
+        #instructor-table {
+            display: none;  /* Hides the table */
+        }
+        .table {
+            position: relative;
+            height: 100px; /* Reduced height to match the card size */
+            width: 45%; /* Width stays the same */
         }
     </style>
 </head>
@@ -177,7 +183,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                     </div>
                 </div>
 
-                <!-- Instructor Table -->
+                <!-- Instructor Table (Hidden) -->
                 <div class="table-responsive">
                     <table class="table table-striped table-sm" id="instructor-table">
                         <thead>
@@ -205,7 +211,6 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             </main>
         </div>
     </div>
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>

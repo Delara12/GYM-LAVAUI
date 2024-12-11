@@ -167,7 +167,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="member">
+                            <a class="nav-link active" href="#members">
                                 <i class="fas fa-users"></i> Members
                             </a>
                         </li>
@@ -177,7 +177,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="instructor">
+                            <a class="nav-link" href="instructor">
                                 <i class="fas fa-chalkboard-teacher"></i> Instructors
                             </a>
                         </li>
@@ -194,47 +194,49 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             <div class="main-content">
                 <!-- Form Container -->
                 <div class="form-container">
-                    <h2>Add New Instructor</h2>
+            <h2>Register New Member</h2>
+            <p class="text-center">Fill out the form below to register a new member.</p>
 
-                    <!-- Form -->
-                    <form action="<?= site_url('instructor/save') ?>" method="POST" enctype="multipart/form-data">
-                        <div class="mb-3">
-                            <label for="instructorName" class="form-label">Instructor Name</label>
-                            <input type="text" class="form-control" id="instructorName" name="instructorName" placeholder="e.g., John Doe" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="instructorAge" class="form-label">Instructor Age</label>
-                            <input type="age" class="form-control" id="instructorAge" name="instructorAge" placeholder="e.g., 21" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="instructorEmail" class="form-label">Instructor Email</label>
-                            <input type="email" class="form-control" id="instructorEmail" name="instructorEmail" placeholder="e.g., john.doe@example.com" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="instructorPhone" class="form-label">Instructor Phone Number</label>
-                            <input type="tel" class="form-control" id="instructorPhone" name="instructorPhone" placeholder="e.g., 09166241756" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="instructorSpecialty" class="form-label">Specialty</label>
-                            <input type="text" class="form-control" id="instructorSpecialty" name="instructorSpecialty" placeholder="e.g., Yoga, Pilates, Strength Training" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="instructorImage" class="form-label">Instructor Image</label>
-                            <input type="file" class="form-control" id="instructorImage" name="instructorImage" accept="image/*">
-                        </div>
-
-                        <div class="btn-container">
-                            <button type="submit" class="btn btn-primary">Save Instructor</button>
-                            <a class="btn btn-secondary" href="<?= site_url('instructor_table'); ?>">View Instructors</a>
-                        </div>
-                    </form>
+            <form action="/member/save" method="POST">
+                <div class="mb-3">
+                    <label for="fullname" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullname" name="fullname" placeholder="John Doe" required>
                 </div>
-            </div>
+
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="age" name="age" placeholder="e.g., 30" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select class="form-select" id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="john.doe@example.com" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="e.g., 09166241756" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea class="form-control" id="address" name="address" rows="3" placeholder="e.g., 123 Fitness St, City, Country" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Register Member</button>
+                
+                <a class="btn btn-secondary" href="<?= site_url('member_table'); ?>">View Members</a>
+                        
+            </form>
         </div>
     </div>
 

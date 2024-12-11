@@ -42,7 +42,9 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 |
 |
 */
-$router->get('/', 'Auth');
+//$router->get('/landingpage', 'LandingController');
+$router->get('/', 'LandingController');
+//$router->get('/', 'Auth');
 $router->get('/home', 'Home');
 $router->get('/about','AboutController');
 $router->get('/blogs','BlogsController');
@@ -79,12 +81,38 @@ $router->post('/members/save', 'MembersController::save');
 
 $router->get('/members', 'MembersController::index');
 
-$router->get('/instructor/data', 'InstructorController::getInstructorData');*/
+$router->get('/instructor/data', 'InstructorController::getInstructorData');
+
+$router->get('/member', 'MemberController');
+
+$router->post('/member/save', 'MemberController::save');
+$router->get('/member_table', 'MemberController::table');
 
 
 $router->get('/members', 'MembersController::index');
 $router->get('/members/add_member', 'MembersController::add_member');
-$router->post('/members/save', 'MembersController::save');
+$router->post('/members/save', 'MembersController::save');*/
+
+
+$router->get('/member', 'MemberController');
+$router->post('/member/save', 'MemberController::save');
+
+
+$router->get('/', 'MemberController::member_table');
+$router->get('/member_table', 'MemberController::member_table');
+$router->get('/member/delete/{id}', 'MemberController::delete');
+$router->match('/member/update/{id}', 'MemberController::update', 'GET|POST');
+// This maps the update routes for members
+// Define the route for updating a member's details
+//$router->get('/member/update/{id}', 'MemberController::update');  // GET request to show the update form
+//$router->post('/member/update/{id}', 'MemberController::update'); // POST request to process the form and update member data
+
+
+
+//$router->get('/member_table', 'MemberController::member_table');  // Define the route for member_table
+
+
+
 /*
 $router->get('/instructor', 'InstructorController::showInstructors'); // Route to show instructor list
 $router->get('/instructor/add', 'InstructorController::addForm'); // Route to show form for adding instructor

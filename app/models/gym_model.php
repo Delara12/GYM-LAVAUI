@@ -7,29 +7,29 @@ class Gym_model extends Model {
         // Your database query to fetch instructors
         return $this->db->table('instructor')->get_all();
     }
+
+    // Fetch all members
+    //public function get_all_members() {
+       // return $this->db->table('members')->get_all();  // Assuming 'members' is the correct table name
+   // }
+
+
+
+    //public function get_user_count() {
+     //   return $this->db->table('members')->select('COUNT(*) as count')->get()['count'];
+   // }
+   public function get_all_members() {
+    return $this->db->table('members')->get_all();
+}
+
+
+   
+
+
+
     
 
-
-public function get_total_members() {
-    return $this->db->table('members')->count_all();
-}
-
-public function get_active_classes() {
-    return $this->db->table('classes')->where('status', 'active')->count_all();
-}
-
-public function get_instructor_count() {
-    return $this->db->table('instructor')->count_all();
-}
-
-public function get_monthly_revenue() {
-    $this_month = date('Y-m');
-    return $this->db->table('payments')
-                    ->where('DATE_FORMAT(payment_date, "%Y-%m") =', $this_month)
-                    ->sum('amount');
-}
-
-public function add_instructor($data) {
-    return $this->db->table('instructors')->insert($data);
-}
+//public function add_instructor($data) {
+  //  return $this->db->table('instructors')->insert($data);
+//}
 }
