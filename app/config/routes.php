@@ -78,7 +78,8 @@ $router->match('/instructor/update/{id}', 'InstructorController::update', 'GET|P
 
 /**members */
 /**$router->get('/members','MembersController');
-$router->post('/members/save', 'MembersController::save'); 
+$router->post('/members/save', 'MembersController::save');
+ 
 
 $router->get('/members', 'MembersController::index');
 
@@ -111,6 +112,8 @@ $router->match('/member/update/{id}', 'MemberController::update', 'GET|POST');
 
 
 //$router->get('/member_table', 'MemberController::member_table');  // Define the route for member_table
+$router->get('/appointment', 'AppointmentController');
+$router->post('/appointment/save', 'AppointmentController::save');
 
 
 
