@@ -14,7 +14,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         /* Header and sidebar styles remain the same */
         .sidebar {
             height: 100vh;
-            background-color: #432E54;
+            background-color:rgb(0, 0, 0);
             padding-top: 50px;
             position: fixed;
             top: 70px;
@@ -39,7 +39,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             padding-top: 70px;
         }
         header {
-            background-color: #EB5B00;
+            background-color:rgb(101, 255, 162);
             color: white;
             padding: 10px 20px;
             position: fixed;

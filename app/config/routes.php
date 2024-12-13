@@ -46,6 +46,9 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 $router->get('/', 'LandingController');
 //$router->get('/', 'Auth');
 $router->get('/home', 'Home');
+$router->get('/beginner', 'begin');
+$router->get('/inter', 'interm');
+$router->get('/ad', 'adv');
 $router->get('/about','AboutController');
 $router->get('/class','classController');
 $router->get('/blogs','BlogsController');
@@ -66,6 +69,8 @@ $route['dashboard'] = 'GymController/dashboard';
 
 /**Instructors */
 $router->get('/instructor','InstructorController');
+$router->get('/manageinstructor','manageinstructorController');
+$router->get('/userView','userviewController');
 $router->post('/instructor/save', 'InstructorController::save'); 
 
 $router->get('/instructor/list', 'InstructorController::showInstructors'); // Add this route

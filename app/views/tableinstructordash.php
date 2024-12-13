@@ -11,7 +11,8 @@
     <style>
         /* Header styling */
         header {
-            background-color: #EB5B00;
+            background-color: rgb(101, 255, 162);
+
             color: white;
             padding: 10px 20px;
             position: fixed; /* Fixes the header at the top */
@@ -42,7 +43,7 @@
         /* Sidebar styling */
         .sidebar {
             height: 100vh;
-            background-color: #432E54;
+            background-color:rgb(0, 0, 0);
             padding-top: 50px;
             position: fixed;
             top: 70px; /* Adjusted to avoid being covered by the fixed header */
@@ -114,14 +115,15 @@
                                 <i class="fas fa-users"></i> Members
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="class">
-                                <i class="fas fa-dumbbell"></i> Classes
-                            </a>
-                        </li>
+                       
                         <li class="nav-item">
                             <a class="nav-link" href="instructor">
                                 <i class="fas fa-chalkboard-teacher"></i> Instructors
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="manageinstructor">
+                                <i class="fas fa-chalkboard-teacher"></i> Manage Instructor
                             </a>
                         </li>
                         <li class="nav-item">
@@ -135,7 +137,7 @@
 
             <!-- Main content -->
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
-                <h1 class="mt-4">Gym Dashboard</h1>
+                
                 
                 <!-- Statistics Cards -->
                 <div class="row mt-4">

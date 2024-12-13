@@ -18,6 +18,8 @@ include APP_DIR . 'views/templates/header.php';
 
                 <!-- Main content for User Settings Page -->
                 <div class="col-md-9 ms-sm-auto col-lg-10 main-content">
+                    <br>
+                    <br>
                     <div class="container">
                         <h2 class="mt-4">Gym User Settings</h2>
                         <p>Customize your gym experience by adjusting your personal preferences and notification settings.</p>
@@ -107,7 +109,7 @@ include APP_DIR . 'views/templates/header.php';
         /* Sidebar styling */
         #sidebar {
             position: fixed;
-            top: 56px; /* Adjusted to avoid overlap with navbar */
+            top: 70px; /* Adjusted to avoid overlap with navbar */
             left: 0;
             width: 250px;
             height: 100%; /* Full height */

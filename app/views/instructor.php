@@ -14,7 +14,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         /* Existing styles */
         .sidebar {
             height: 100vh;
-            background-color: #432E54;
+            background-color:rgb(0, 0, 0);
             padding-top: 50px;
             position: fixed;
             top: 70px;
@@ -39,7 +39,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             padding-top: 70px;
         }
         header {
-            background-color: #EB5B00;
+            background-color:rgb(101, 255, 162);
             color: white;
             padding: 10px 20px;
             position: fixed;
@@ -171,14 +171,15 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                                 <i class="fas fa-users"></i> Members
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#classes">
-                                <i class="fas fa-dumbbell"></i> Classes
-                            </a>
-                        </li>
+                       
                         <li class="nav-item">
                             <a class="nav-link active" href="instructor">
                                 <i class="fas fa-chalkboard-teacher"></i> Instructors
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="manageinstructor">
+                                <i class="fas fa-chalkboard-teacher"></i> Manage Instructor
                             </a>
                         </li>
                         <li class="nav-item">

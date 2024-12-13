@@ -13,7 +13,7 @@
             background-color: #f4f4f4;
         }
         header {
-            background-color: #EB5B00;
+            background-color:rgb(0, 0, 0);
             color: white;
             padding: 10px 20px;
             position: fixed;
@@ -35,7 +35,7 @@
         }
         .sidebar {
             height: 100vh;
-            background-color: #432E54;
+            background-color:rgb(101, 255, 162);
             padding-top: 50px;
             position: fixed;
             top: 70px;

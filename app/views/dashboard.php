@@ -12,7 +12,7 @@ include APP_DIR . 'views/templates/header.php';
         <!-- Main layout container -->
             <!-- Include the sidebar navigation -->
             <?php
-            include APP_DIR . 'views/templates/sidebar.php'; // Sidebar navigation
+            include APP_DIR . 'views/templates/sidenav.php'; // Sidebar navigation
             ?>
 
             <!-- Main content area -->

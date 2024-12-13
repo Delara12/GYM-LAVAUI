@@ -83,7 +83,7 @@ include APP_DIR . 'views/templates/header.php';
         /* Sidebar styling */
         #sidebar {
             position: fixed;
-            top: 56px; /* Adjusted to avoid overlap with navbar */
+            top: 70px; /* Adjusted to avoid overlap with navbar */
             left: 0;
             width: 250px;
             height: 100%; /* Set sidebar height to full screen */

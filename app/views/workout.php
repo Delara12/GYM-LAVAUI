@@ -33,7 +33,7 @@ include APP_DIR . 'views/templates/header.php';
                                                 <h5 class="card-title text-center">3 Days/Week</h5>
                                                 <p class="card-text">A gentle introduction to fitness with low-impact exercises for beginners.</p>
                                                 <div class="d-flex justify-content-center">
-                                                    <a href="#" class="btn btn-primary">View Program</a>
+                                                    <a href="/beginner" class="btn btn-primary">View Program</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -47,7 +47,7 @@ include APP_DIR . 'views/templates/header.php';
                                                 <h5 class="card-title text-center">5 Days/Week</h5>
                                                 <p class="card-text">A balanced program focusing on strength and cardio for intermediate users.</p>
                                                 <div class="d-flex justify-content-center">
-                                                    <a href="#" class="btn btn-success">View Program</a>
+                                                    <a href="/inter" class="btn btn-success">View Program</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -61,7 +61,7 @@ include APP_DIR . 'views/templates/header.php';
                                                 <h5 class="card-title text-center">7 Days/Week</h5>
                                                 <p class="card-text">An intensive program designed for experienced users to reach peak fitness levels.</p>
                                                 <div class="d-flex justify-content-center">
-                                                    <a href="#" class="btn btn-warning">View Program</a>
+                                                    <a href="/ad" class="btn btn-warning">View Program</a>
                                                 </div>
                                             </div>
                                         </div>
