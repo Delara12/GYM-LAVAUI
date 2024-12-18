@@ -20,9 +20,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
             <!-- Centered Navigation Links -->
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item mx-3">
-                    <a class="nav-link" href="<?=site_url('/home');?>" style="color: #27ae60; font-size: 18px;">Home</a>
-                </li>
+               
                 <li class="nav-item mx-3">
                     <a class="nav-link" href="<?=site_url('/about');?>" style="color: #27ae60; font-size: 18px;">About Us</a>
                 </li>

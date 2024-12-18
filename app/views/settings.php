@@ -17,86 +17,124 @@ include APP_DIR . 'views/templates/header.php';
                 ?>  
 
                 <!-- Main content for User Settings Page -->
-                <div class="col-md-9 ms-sm-auto col-lg-10 main-content">
-                    <br>
-                    <br>
-                    <div class="container">
-                        <h2 class="mt-4">Gym User Settings</h2>
-                        <p>Customize your gym experience by adjusting your personal preferences and notification settings.</p>
-                        
-                        <form action="#" method="POST">
-                            <div class="mb-3">
-                                <label for="preferredWorkoutTime" class="form-label">Preferred Workout Time</label>
-                                <select class="form-select" id="preferredWorkoutTime" name="preferredWorkoutTime" required>
-                                    <option value="">Choose...</option>
-                                    <option value="early_morning">Early Morning (5AM - 8AM)</option>
-                                    <option value="morning">Morning (8AM - 11AM)</option>
-                                    <option value="afternoon">Afternoon (11AM - 3PM)</option>
-                                    <option value="evening">Evening (3PM - 7PM)</option>
-                                    <option value="night">Night (7PM - Close)</option>
-                                </select>
-                            </div>
+                <main class="main-content col">
+                    <div class="container py-4">
+                        <br>
+                        <br>
+                        <h1 class="text-center mb-4">Settings</h1>
 
-                            <div class="mb-3">
-                                <label for="fitnessGoal" class="form-label">Primary Fitness Goal</label>
-                                <select class="form-select" id="fitnessGoal" name="fitnessGoal" required>
-                                    <option value="">Choose...</option>
-                                    <option value="weight_loss">Weight Loss</option>
-                                    <option value="muscle_gain">Muscle Gain</option>
-                                    <option value="endurance">Endurance</option>
-                                    <option value="flexibility">Flexibility</option>
-                                    <option value="general_fitness">General Fitness</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="preferredClasses" class="form-label">Preferred Classes</label>
-                                <select class="form-select" id="preferredClasses" name="preferredClasses[]" multiple required>
-                                    <option value="yoga">Yoga</option>
-                                    <option value="spinning">Spinning</option>
-                                    <option value="zumba">Zumba</option>
-                                    <option value="pilates">Pilates</option>
-                                    <option value="hiit">HIIT</option>
-                                    <option value="strength_training">Strength Training</option>
-                                </select>
-                                <small class="form-text text-muted">Hold Ctrl (Windows) or Command (Mac) to select multiple options.</small>
-                            </div>
-
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="personalTrainer" name="personalTrainer">
-                                <label class="form-check-label" for="personalTrainer">Interested in Personal Training</label>
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Notification Preferences</label>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="notifyClassReminders" name="notifications[]" value="class_reminders">
-                                    <label class="form-check-label" for="notifyClassReminders">Class Reminders</label>
-                                </div>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="notifySpecialOffers" name="notifications[]" value="special_offers">
-                                    <label class="form-check-label" for="notifySpecialOffers">Special Offers</label>
-                                </div>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="notifyMembershipRenewal" name="notifications[]" value="membership_renewal">
-                                    <label class="form-check-label" for="notifyMembershipRenewal">Membership Renewal</label>
+                        <div class="row g-4">
+                            <!-- Section 1: Class Preferences -->
+                            <div class="col-lg-6">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-header bg-success text-white">
+                                        <h5 class="card-title mb-0">Class Preferences</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="class-preferences" class="form-label">Preferred Classes</label>
+                                                <select class="form-select" id="class-preferences" multiple>
+                                                    <option>Yoga</option>
+                                                    <option>Strength Training</option>
+                                                    <option>Cardio</option>
+                                                    <option>Zumba</option>
+                                                    <option>Pilates</option>
+                                                </select>
+                                                <small class="text-muted">Hold Ctrl (Cmd on Mac) to select multiple options.</small>
+                                            </div>
+                                            <button type="submit" class="btn btn-success">Save Preferences</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="privacySettings" class="form-label">Privacy Settings</label>
-                                <select class="form-select" id="privacySettings" name="privacySettings" required>
-                                    <option value="">Choose...</option>
-                                    <option value="public">Public Profile</option>
-                                    <option value="friends">Friends Only</option>
-                                    <option value="private">Private</option>
-                                </select>
+                            <!-- Section 2: Facility Access -->
+                            <div class="col-lg-6">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-header bg-primary text-white">
+                                        <h5 class="card-title mb-0">Facility Access</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="sauna-access" checked>
+                                                <label class="form-check-label" for="sauna-access">Sauna</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="pool-access">
+                                                <label class="form-check-label" for="pool-access">Swimming Pool</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="premium-access" checked>
+                                                <label class="form-check-label" for="premium-access">Premium Facilities</label>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary mt-3">Update Access</button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Save Settings</button>
-                        </form>
+                            <!-- Section 3: Theme Customization -->
+                            <div class="col-lg-6">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-header bg-warning text-dark">
+                                        <h5 class="card-title mb-0">Theme Customization</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="theme-selection" class="form-label">Choose Theme</label>
+                                                <select class="form-select" id="theme-selection">
+                                                    <option>Light</option>
+                                                    <option>Dark</option>
+                                                    <option>Custom</option>
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn btn-warning">Apply Theme</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 4: Language Preferences -->
+                            <div class="col-lg-6">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-header bg-secondary text-white">
+                                        <h5 class="card-title mb-0">Language Preferences</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="language-selection" class="form-label">Select Language</label>
+                                                <select class="form-select" id="language-selection">
+                                                    <option>English</option>
+                                                    <option>Spanish</option>
+                                                    <option>French</option>
+                                                    <option>German</option>
+                                                    <option>Chinese</option>
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn btn-secondary">Save Language</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Section 5: Support Options -->
+                            <div class="col-lg-12">
+                                <div class="card shadow-sm h-100">
+                                    <div class="card-header bg-info text-white">
+                                        <h5 class="card-title mb-0">Support</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Need help? Visit our <a href="#">FAQ</a> page or <a href="#">contact support</a>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </main>
             </div>
         </div>
     </div>
@@ -141,35 +179,30 @@ include APP_DIR . 'views/templates/header.php';
 
         /* Main content styling */
         .main-content {
-            margin-left: 250px; /* Adjusted for sidebar width */
+            margin-left: 1px; 
+            margin-right: 150px;
             background: linear-gradient(to bottom, #d4f1d4, #9acb8c, #ffffff); /* Green gradient background */
             padding-top: 20px;
             min-height: 100vh;
             color: black;
             overflow-y: auto;
         }
-
-        /* Form styling */
-        .form-control, .form-select {
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid #9acb8c;
+        body{
+            background: linear-gradient(to bottom, #d4f1d4, #9acb8c, #ffffff);
         }
 
-        .form-control:focus, .form-select:focus {
-            background-color: #ffffff;
-            border-color: #6c9e52;
-            box-shadow: 0 0 0 0.2rem rgba(108, 158, 82, 0.25);
+        /* Card styling */
+        .card {
+            border: none;
+            border-radius: 10px;
         }
 
-        /* Button styling */
-        .btn-primary {
-            background-color: #6c9e52;
-            border-color: #6c9e52;
+        .card-header {
+            font-weight: bold;
         }
 
-        .btn-primary:hover {
-            background-color: #5a8344;
-            border-color: #5a8344;
+        .card-body {
+            padding: 20px;
         }
     </style>
 </body>

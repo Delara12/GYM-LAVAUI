@@ -49,6 +49,11 @@ $router->get('/home', 'Home');
 $router->get('/beginner', 'begin');
 $router->get('/inter', 'interm');
 $router->get('/ad', 'adv');
+$router->get('/viewstatus', 'viewstat');
+$router->post('/memplan', 'mem');
+$router->get('/memplan', 'mem');
+$router->get('/report', 'rep');
+$router->get('/UserSched', 'userSchedule');
 $router->get('/about','AboutController');
 $router->get('/class','classController');
 $router->get('/blogs','BlogsController');
@@ -102,6 +107,7 @@ $router->post('/members/save', 'MembersController::save');*/
 
 
 $router->get('/member', 'MemberController');
+$router->get('/process_signup', 'process');
 $router->post('/member/save', 'MemberController::save');
 
 

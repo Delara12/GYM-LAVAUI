@@ -19,10 +19,12 @@ include APP_DIR . 'views/templates/header.php';
             <!-- Main content area -->
             <main class="content">
                 <div class="container-fluid">
-                    <h1>Gym Dashboard - Instructor Information</h1>
+                    <br>
+                    <br>
+                    <h1>Instructor Information</h1>
                     
                     <div class="chart-container card p-3 m-3">
-                        <h2>Instructor List</h2>
+                       
                         <div class="table-responsive">
                             <table id="instructorTable" class="table table-striped table-bordered">
                                 <thead>

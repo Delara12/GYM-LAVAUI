@@ -10,11 +10,13 @@ include APP_DIR . 'views/templates/header.php'; // Include header
         <!-- Main Content Section -->
         <div class="container-fluid" style="visibility: hidden;" id="main-content">
             <div class="row justify-content-center">
+                
                 <!-- Welcome Section -->
                 <section class="col-md-12 col-lg-10 px-md-4 mt-4">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="welcome-message text-center">
+                                <br>
                                 <h1>Welcome to DEMM FITNESS GYM</h1>
                                 <p class="lead">Your journey to a healthier, stronger, and more energized you starts here!</p>
                                 <p>Explore our exclusive membership plans, personalized workout programs, and expert-led training sessions designed for all fitness levels.</p>

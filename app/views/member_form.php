@@ -30,6 +30,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         .sidebar .nav-link {
             font-size: 1.25rem;
             padding: 15px 20px;
+            color: white;
         }
         .main-content {
             margin-left: 250px;
@@ -40,7 +41,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         }
         header {
             background-color:rgb(101, 255, 162);
-            color: white;
+            color: black;
             padding: 10px 20px;
             position: fixed;
             top: 0;
@@ -161,17 +162,21 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
                 <div class="position-sticky">
                     <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link" href="tableinstructordash">
+                    <li class="nav-item">
+                            <a class="nav-link active" href="#dashboard">
                                 <i class="fas fa-tachometer-alt"></i> Dashboard
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#members">
+                            <a class="nav-link" href="member">
                                 <i class="fas fa-users"></i> Members
                             </a>
                         </li>
-                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="UserSched">
+                                <i class="fas fa-chalkboard-teacher"></i> User Schedule
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="instructor">
                                 <i class="fas fa-chalkboard-teacher"></i> Instructors
@@ -183,8 +188,13 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#payments">
-                                <i class="fas fa-credit-card"></i> Payments
+                            <a class="nav-link" href="process_signup">
+                                <i class="fas fa-chalkboard-teacher"></i> Members Payment
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="report">
+                                <i class="fas fa-credit-card"></i> Reports
                             </a>
                         </li>
                     </ul>
@@ -196,17 +206,19 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                 <!-- Form Container -->
                 <div class="form-container">
             <h2>Register New Member</h2>
-            <p class="text-center">Fill out the form below to register a new member.</p>
+            <a class="btn btn-secondary" href="<?= site_url('member_table'); ?>">View Members</a>
+            <br>
 
             <form action="/member/save" method="POST">
                 <div class="mb-3">
+                    <br>
                     <label for="fullname" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" id="fullname" name="fullname" placeholder="John Doe" required>
+                    <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Vhybenica" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="age" class="form-label">Age</label>
-                    <input type="number" class="form-control" id="age" name="age" placeholder="e.g., 30" required>
+                    <input type="number" class="form-control" id="age" name="age" placeholder="e.g., 21" required>
                 </div>
 
                 <div class="mb-3">
@@ -220,7 +232,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="john.doe@example.com" required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="vhybenica@example.com" required>
                 </div>
 
                 <div class="mb-3">
@@ -230,12 +242,12 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
                 <div class="mb-3">
                     <label for="address" class="form-label">Address</label>
-                    <textarea class="form-control" id="address" name="address" rows="3" placeholder="e.g., 123 Fitness St, City, Country" required></textarea>
+                    <textarea class="form-control" id="address" name="address" rows="3" placeholder="e.g., Batino, Calapan City Oriental Mindoro" required></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Register Member</button>
                 
-                <a class="btn btn-secondary" href="<?= site_url('member_table'); ?>">View Members</a>
+              
                         
             </form>
         </div>

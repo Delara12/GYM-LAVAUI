@@ -35,7 +35,7 @@
         }
         .sidebar {
             height: 100vh;
-            background-color:rgb(101, 255, 162);
+            background-color:rgb(0, 0, 0);
             padding-top: 50px;
             position: fixed;
             top: 70px;
@@ -44,13 +44,14 @@
             font-size: 1.2rem;
         }
         .sidebar .nav-link.active {
-            background-color: #4CAF50;
+            background-color:rgb(0, 43, 172);
             color: white;
             border-radius: 5px;
         }
         .sidebar .nav-link {
             font-size: 1.25rem;
             padding: 15px 20px;
+            color: white;
         }
         .main-content {
             margin-left: 250px;
@@ -126,31 +127,41 @@
         <div class="row">
             <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
                 <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tableinstructordash">
-                            <i class="fas fa-tachometer-alt"></i> Dashboard
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#member">
-                            <i class="fas fa-users"></i> Members
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#class">
-                            <i class="fas fa-dumbbell"></i> Classes
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#instructor">
-                            <i class="fas fa-chalkboard-teacher"></i> Instructors
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#payments">
-                            <i class="fas fa-credit-card"></i> Payments
-                        </a>
-                    </li>
+                <li class="nav-item">
+                            <a class="nav-link active" href="#dashboard">
+                                <i class="fas fa-tachometer-alt"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="member">
+                                <i class="fas fa-users"></i> Members
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="UserSched">
+                                <i class="fas fa-chalkboard-teacher"></i> User Schedule
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="instructor">
+                                <i class="fas fa-chalkboard-teacher"></i> Instructors
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="manageinstructor">
+                                <i class="fas fa-chalkboard-teacher"></i> Manage Instructor
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="process_signup">
+                                <i class="fas fa-chalkboard-teacher"></i> Members Payment
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="report">
+                                <i class="fas fa-credit-card"></i> Reports
+                            </a>
+                        </li>
                 </ul>
             </nav>
 

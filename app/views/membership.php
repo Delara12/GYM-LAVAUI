@@ -33,7 +33,7 @@ include APP_DIR . 'views/templates/header.php';
                                                 <h5 class="card-title text-center">250.00/month</h5>
                                                 <p class="card-text">Access to basic gym equipment and facilities.</p>
                                                 <div class="d-flex justify-content-center">
-                                                    <a href="#" class="btn btn-primary">Sign Up</a>
+                                                    <a href="/memplan" class="btn btn-primary">Sign Up</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -47,7 +47,7 @@ include APP_DIR . 'views/templates/header.php';
                                                 <h5 class="card-title text-center">3000.00/month</h5>
                                                 <p class="card-text">Includes gym access, group classes, and 24/7 access.</p>
                                                 <div class="d-flex justify-content-center">
-                                                    <a href="#" class="btn btn-success">Sign Up</a>
+                                                    <a href="/memplan" class="btn btn-success">Sign Up</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -61,7 +61,7 @@ include APP_DIR . 'views/templates/header.php';
                                                 <h5 class="card-title text-center">5000.00/month</h5>
                                                 <p class="card-text">All-access pass including personal training sessions and spa services.</p>
                                                 <div class="d-flex justify-content-center">
-                                                    <a href="#" class="btn btn-warning">Sign Up</a>
+                                                    <a href="/memplan" class="btn btn-warning">Sign Up</a>
                                                 </div>
                                             </div>
                                         </div>

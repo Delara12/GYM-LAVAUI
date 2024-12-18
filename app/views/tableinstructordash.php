@@ -13,7 +13,7 @@
         header {
             background-color: rgb(101, 255, 162);
 
-            color: white;
+            color: black;
             padding: 10px 20px;
             position: fixed; /* Fixes the header at the top */
             top: 0;
@@ -115,6 +115,11 @@
                                 <i class="fas fa-users"></i> Members
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="UserSched">
+                                <i class="fas fa-chalkboard-teacher"></i> User Schedule
+                            </a>
+                        </li>
                        
                         <li class="nav-item">
                             <a class="nav-link" href="instructor">
@@ -127,8 +132,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#payments">
-                                <i class="fas fa-credit-card"></i> Payments
+                            <a class="nav-link" href="process_signup">
+                                <i class="fas fa-chalkboard-teacher"></i> Members Payment
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="report">
+                                <i class="fas fa-credit-card"></i> Reports
                             </a>
                         </li>
                     </ul>

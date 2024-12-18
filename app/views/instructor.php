@@ -30,6 +30,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         .sidebar .nav-link {
             font-size: 1.25rem;
             padding: 15px 20px;
+            color: white;
         }
         .main-content {
             margin-left: 250px;
@@ -40,7 +41,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
         }
         header {
             background-color:rgb(101, 255, 162);
-            color: white;
+            color: black;
             padding: 10px 20px;
             position: fixed;
             top: 0;
@@ -161,8 +162,8 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
             <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
                 <div class="position-sticky">
                     <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link" href="tableinstructordash">
+                    <li class="nav-item">
+                            <a class="nav-link active" href="#dashboard">
                                 <i class="fas fa-tachometer-alt"></i> Dashboard
                             </a>
                         </li>
@@ -171,9 +172,13 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                                 <i class="fas fa-users"></i> Members
                             </a>
                         </li>
-                       
                         <li class="nav-item">
-                            <a class="nav-link active" href="instructor">
+                            <a class="nav-link" href="UserSched">
+                                <i class="fas fa-chalkboard-teacher"></i> User Schedule
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="instructor">
                                 <i class="fas fa-chalkboard-teacher"></i> Instructors
                             </a>
                         </li>
@@ -183,8 +188,13 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#payments">
-                                <i class="fas fa-credit-card"></i> Payments
+                            <a class="nav-link" href="process_signup">
+                                <i class="fas fa-chalkboard-teacher"></i> Members Payment
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="report">
+                                <i class="fas fa-credit-card"></i> Reports
                             </a>
                         </li>
                     </ul>
@@ -201,7 +211,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
                     <form action="<?= site_url('instructor/save') ?>" method="POST" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="instructorName" class="form-label">Instructor Name</label>
-                            <input type="text" class="form-control" id="instructorName" name="instructorName" placeholder="e.g., John Doe" required>
+                            <input type="text" class="form-control" id="instructorName" name="instructorName" placeholder="e.g., Vhybenica" required>
                         </div>
 
                         <div class="mb-3">
@@ -211,7 +221,7 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
                         <div class="mb-3">
                             <label for="instructorEmail" class="form-label">Instructor Email</label>
-                            <input type="email" class="form-control" id="instructorEmail" name="instructorEmail" placeholder="e.g., john.doe@example.com" required>
+                            <input type="email" class="form-control" id="instructorEmail" name="instructorEmail" placeholder="e.g., vhybenica@example.com" required>
                         </div>
 
                         <div class="mb-3">

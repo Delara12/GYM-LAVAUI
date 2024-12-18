@@ -3,132 +3,202 @@ include APP_DIR . 'views/templates/header.php';
 ?>
 <body>
     <div id="app">
-        <!-- Include the navigation bar here -->
+        <!-- Navigation -->
         <?php
-        include APP_DIR . 'views/templates/nav.php'; // Assuming nav.php contains the header and main navigation
+        include APP_DIR . 'views/templates/nav.php';
         ?>
-<br>
-
-        <div class="container-fluid">
+        
+        <div class="container-fluid bg-light">
             <div class="row">
-                <div class="col-12 main-content">
-                    <div class="container">
-                        <h2 class="mt-4">Welcome to Our Gym Blog!</h2>
-                        <p>Fitness is a journey, not a destination! Explore our blog for the latest tips, workout guides, and inspiration to help you reach your fitness goals.</p>
-                        
-                        <div class="card mb-4">
-                            <div class="card-header bg-success text-white">
-                                <h4><i class="fas fa-dumbbell"></i> 5 Essential Gym Tips for Beginners</h4>
-                            </div>
-                            <div class="card-body">
-                                <p>Starting your fitness journey can be overwhelming. Don't worry! Here are 5 essential gym tips to make your workout routine effective and enjoyable:</p>
-                                <ul>
-                                    <li><strong>Start Slow:</strong> Begin with basic exercises to build your foundation. Focus on form before pushing your limits.</li>
-                                    <li><strong>Stay Consistent:</strong> Consistency is key. Set achievable goals and stick to your schedule.</li>
-                                    <li><strong>Hydrate:</strong> Drink plenty of water throughout your workout. Proper hydration improves performance and recovery.</li>
-                                    <li><strong>Rest & Recover:</strong> Give your muscles time to recover. Rest days are just as important as workout days.</li>
-                                    <li><strong>Fuel Your Body:</strong> A balanced diet rich in protein, carbs, and healthy fats will power your workouts and recovery.</li>
-                                </ul>
-                                <p>Stay motivated and remember: progress takes time! Keep pushing forward and celebrate every small victory along the way.</p>
-                            </div>
-                        </div>
+                <!-- Main Content Section -->
+                <div class="col-lg-8 col-md-10 col-12 mx-auto pt-5">
+                    <div class="text-center">
+                        <br>
+                        <h1 class="display-3 text-primary font-weight-bold">Welcome to Our Gym Blog!</h1>
+                        <p class="lead text-muted mb-4">Your ultimate fitness guide, with tips, motivation, and workouts to inspire you!</p>
+                    </div>
 
-                        <div class="card mb-4">
-                            <div class="card-header bg-warning text-dark">
-                                <h4><i class="fas fa-heartbeat"></i> The Benefits of Cardio: More Than Just a Fat Burner</h4>
-                            </div>
-                            <div class="card-body">
-                                <p>Cardio exercises aren't just for weight loss. They offer a wide range of health benefits that can improve your overall well-being:</p>
-                                <ul>
-                                    <li><strong>Boosts Heart Health:</strong> Regular cardio strengthens your heart and improves circulation.</li>
-                                    <li><strong>Improves Mood:</strong> Cardio workouts release endorphins, the "feel-good" hormones, reducing stress and anxiety.</li>
-                                    <li><strong>Increases Stamina:</strong> With consistent cardio, your endurance levels will improve, making you more active throughout the day.</li>
-                                    <li><strong>Supports Weight Management:</strong> Cardio helps burn calories, making it an excellent tool for maintaining a healthy weight.</li>
-                                    <li><strong>Better Sleep:</strong> Engaging in regular cardio can help regulate your sleep patterns and improve sleep quality.</li>
-                                </ul>
-                                <p>Cardio is an essential part of any fitness routine, whether you're aiming to shed some pounds or just improve your overall health!</p>
-                            </div>
+                    <!-- Blog Card 1 -->
+                    <div class="card blog-card mb-4 rounded-lg shadow-lg">
+                        <div class="card-header bg-info text-white text-center py-3">
+                            <h3 class="m-0"><i class="fas fa-dumbbell"></i> 5 Essential Gym Tips for Beginners</h3>
                         </div>
+                        <div class="card-body">
+                            <p class="lead">Starting at the gym can be overwhelming. Here’s a simple guide to help you get started:</p>
+                            <ul class="list-unstyled">
+                                <li><strong>Start Slow:</strong> Focus on mastering form and technique before increasing weight.</li>
+                                <li><strong>Stay Consistent:</strong> Consistency is more important than intensity when starting out.</li>
+                                <li><strong>Hydrate:</strong> Water helps with muscle recovery and energy levels.</li>
+                                <li><strong>Rest:</strong> Your muscles grow when you rest, so take recovery seriously.</li>
+                                <li><strong>Fuel Up:</strong> Proper nutrition is key to maintaining your energy levels and muscle growth.</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary btn-block btn-lg mt-3">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
 
-                        <div class="card mb-4">
-                            <div class="card-header bg-primary text-white">
-                                <h4><i class="fas fa-users"></i> Why Working Out With a Partner Can Boost Your Results</h4>
-                            </div>
-                            <div class="card-body">
-                                <p>Training with a workout buddy can take your fitness journey to the next level. Here are a few reasons why:</p>
-                                <ul>
-                                    <li><strong>Motivation:</strong> A workout partner keeps you motivated, helping you push through tough sessions.</li>
-                                    <li><strong>Accountability:</strong> Having a partner means you're less likely to skip a workout, knowing they'll be there waiting for you.</li>
-                                    <li><strong>Healthy Competition:</strong> Friendly competition can challenge both of you to do your best and reach new personal records.</li>
-                                    <li><strong>Fun Factor:</strong> Working out with a partner adds an element of fun, making the gym experience more enjoyable.</li>
-                                    <li><strong>Variety:</strong> A workout partner can introduce you to new exercises or routines that you might not have tried alone.</li>
-                                </ul>
-                                <p>So, grab a buddy and turn your gym sessions into a fun, challenging, and rewarding experience!</p>
-                            </div>
+                    <!-- Blog Card 2 -->
+                    <div class="card blog-card mb-4 rounded-lg shadow-lg">
+                        <div class="card-header bg-warning text-dark text-center py-3">
+                            <h3 class="m-0"><i class="fas fa-heartbeat"></i> The Benefits of Cardio</h3>
                         </div>
+                        <div class="card-body">
+                            <p class="lead">Cardio isn’t just about burning fat! Here’s how it benefits your health:</p>
+                            <ul class="list-unstyled">
+                                <li><strong>Heart Health:</strong> Strengthens your cardiovascular system.</li>
+                                <li><strong>Stress Relief:</strong> Cardio releases endorphins, which improve your mood.</li>
+                                <li><strong>Weight Management:</strong> Aids in calorie burn and metabolism boost.</li>
+                                <li><strong>Better Sleep:</strong> Regular cardio helps with a good night’s rest.</li>
+                                <li><strong>Increased Energy:</strong> You’ll feel more energized throughout the day.</li>
+                            </ul>
+                            <a href="#" class="btn btn-warning btn-block btn-lg mt-3">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
 
-                        <div class="card mb-4">
-                            <div class="card-header bg-danger text-white">
-                                <h4><i class="fas fa-bone"></i> How to Prevent Common Workout Injuries</h4>
-                            </div>
-                            <div class="card-body">
-                                <p>Injuries are an unfortunate part of fitness, but with the right precautions, you can reduce your risk:</p>
-                                <ul>
-                                    <li><strong>Warm Up:</strong> A proper warm-up increases blood flow to your muscles, preparing your body for intense activity.</li>
-                                    <li><strong>Focus on Form:</strong> Always prioritize proper form over lifting heavier weights. Bad form can lead to unnecessary strain and injury.</li>
-                                    <li><strong>Don't Skip Stretching:</strong> Stretching before and after your workout helps maintain flexibility and prevent muscle tightness.</li>
-                                    <li><strong>Listen to Your Body:</strong> If something hurts, stop. Pushing through pain is a surefire way to cause an injury.</li>
-                                    <li><strong>Use the Right Equipment:</strong> Ensure that your shoes, weights, and other equipment are suited to your workout style.</li>
-                                </ul>
-                                <p>By following these steps, you can enjoy your workouts while staying safe and injury-free!</p>
-                            </div>
+                    <!-- Blog Card 3 -->
+                    <div class="card blog-card mb-4 rounded-lg shadow-lg">
+                        <div class="card-header bg-success text-white text-center py-3">
+                            <h3 class="m-0"><i class="fas fa-users"></i> Partner Workouts: Double the Fun</h3>
                         </div>
+                        <div class="card-body">
+                            <p class="lead">Partner workouts are more than just fun—they can help you achieve better results:</p>
+                            <ul class="list-unstyled">
+                                <li><strong>Motivation:</strong> A partner can push you to perform better.</li>
+                                <li><strong>Accountability:</strong> You’re less likely to skip workouts with someone else relying on you.</li>
+                                <li><strong>Support:</strong> You can spot each other during heavy lifts and prevent injuries.</li>
+                                <li><strong>Variety:</strong> Partners can introduce new exercises to spice up your routine.</li>
+                                <li><strong>Fun:</strong> The social aspect makes working out a lot more enjoyable.</li>
+                            </ul>
+                            <a href="#" class="btn btn-success btn-block btn-lg mt-3">Start Working Out Together <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Blog Card 4 -->
+                    <div class="card blog-card mb-4 rounded-lg shadow-lg">
+                        <div class="card-header bg-danger text-white text-center py-3">
+                            <h3 class="m-0"><i class="fas fa-bone"></i> Preventing Workout Injuries</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead">Safety first! Learn how to avoid common injuries at the gym:</p>
+                            <ul class="list-unstyled">
+                                <li><strong>Warm Up:</strong> Increase blood flow and flexibility with a proper warm-up.</li>
+                                <li><strong>Form Over Weight:</strong> Never sacrifice form for lifting heavier weights.</li>
+                                <li><strong>Stretching:</strong> Stretch after every workout to prevent tight muscles.</li>
+                                <li><strong>Listen to Your Body:</strong> If something hurts, stop immediately.</li>
+                                <li><strong>Use the Right Equipment:</strong> Always use appropriate gear for your workouts.</li>
+                            </ul>
+                            <a href="#" class="btn btn-danger btn-block btn-lg mt-3">Stay Safe, Train Smart <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Section -->
+                <div class="col-lg-4 col-md-4 col-12 sidebar bg-white py-5 mt-5 mt-md-0">
+                    <div class="sticky-top">
+                        <br>
+                        <br>
+                        <h4 class="text-center text-primary">Latest Updates</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-muted">How to Build Your Dream Workout Routine</a></li>
+                            <li><a href="#" class="text-muted">Top 10 Protein Foods for Muscle Gain</a></li>
+                            <li><a href="#" class="text-muted">Why Rest Days Are Essential to Your Success</a></li>
+                            <li><a href="#" class="text-muted">Best Supplements for Recovery After Workout</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white text-center py-3">
+            <p>Copyright © 2024 | Gym Blog | All Rights Reserved</p>
+        </footer>
     </div>
 
-    <!-- Include Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <!-- Include Bootstrap and JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
     <style>
-        body {
-            background-color: #E8F5E9; /* Light green background */
-            color: black;
-            margin: 0;
-            padding: 0;
-        }
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Poppins', sans-serif;
+        color: #333;
+    }
 
-        .container-fluid {
-            padding-top: 20px;
-        }
+    .container-fluid {
+        padding-top: 20px;
+    }
 
-        .main-content {
-            padding-top: 20px;
-        }
+    .blog-card {
+        border: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .card-header {
-            font-size: 1.25rem;
-            padding: 15px;
-            text-align: center;
-        }
+    .blog-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    }
 
-        .card-body {
-            padding: 20px;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
+    .card-header {
+        text-transform: uppercase;
+        font-weight: 600;
+    }
 
-        .btn-primary {
-            background-color: #28a745;
-            border: none;
-        }
+    .btn-block {
+        font-size: 1.2rem;
+        padding: 12px;
+        text-align: center;
+        text-transform: uppercase;
+    }
 
-        .btn-primary:hover {
-            background-color: #218838;
-        }
-    </style>
+    .lead {
+        font-size: 1.1rem;
+        color: #555;
+    }
+
+    ul li {
+        margin-bottom: 12px;
+    }
+
+    footer {
+        background-color: #343a40;
+    }
+
+    .sidebar {
+        position: sticky;
+        top: 20px; /* Keeps the sidebar 20px from the top */
+        z-index: 10; /* Ensures the sidebar is always above other content */
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        background-color: white;
+    }
+
+    .sidebar h4 {
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+        padding-left: 20px;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 15px;
+    }
+
+    .sidebar ul li a {
+        font-size: 1rem;
+        color: #6c757d;
+    }
+
+    .sidebar ul li a:hover {
+        color: #17a2b8;
+    }
+
+    footer {
+        background-color: #343a40;
+    }
+
+</style>
+
 </body>
-</html>

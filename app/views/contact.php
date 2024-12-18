@@ -1,4 +1,4 @@
-<?php include APP_DIR . 'views/templates/nav.php'; ?> <!-- Navigation bar is absolutely at the top -->
+<?php include APP_DIR . 'views/templates/nav.php'; ?> 
 
 <!DOCTYPE html>
 <html lang="en">

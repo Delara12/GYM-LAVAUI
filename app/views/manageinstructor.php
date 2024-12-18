@@ -60,6 +60,7 @@
         .sidebar .nav-link {
             font-size: 1.25rem; /* Increased font size */
             padding: 15px 20px; /* Added padding for better spacing */
+            color: white;
         }
 
         .sidebar .nav-link.active {
@@ -95,21 +96,41 @@
 
 <div class="sidebar">
     <ul class="nav flex-column">
-        <li class="nav-item">
-            <a class="nav-link active" href="#dashboard">Dashboard</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="member">Members</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="instructor">Instructors</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="manageinstructor">Manage Instructor</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#payments">Payments</a>
-        </li>
+    <li class="nav-item">
+                            <a class="nav-link active" href="#dashboard">
+                                <i class="fas fa-tachometer-alt"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="member">
+                                <i class="fas fa-users"></i> Members
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="UserSched">
+                                <i class="fas fa-chalkboard-teacher"></i> User Schedule
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="instructor">
+                                <i class="fas fa-chalkboard-teacher"></i> Instructors
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="manageinstructor">
+                                <i class="fas fa-chalkboard-teacher"></i> Manage Instructor
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="process_signup">
+                                <i class="fas fa-chalkboard-teacher"></i> Members Payment
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="report">
+                                <i class="fas fa-credit-card"></i> Reports
+                            </a>
+                        </li>
     </ul>
 </div>
 

@@ -16,157 +16,89 @@ include APP_DIR . 'views/templates/header.php';
             ?>
 
             <!-- Main content area -->
-            <main class="content">
-                <h1 class="mt-4">Gym Dashboard</h1>
-                <div class="dashboard-content d-flex flex-wrap">
-                    <!-- Visualization Section -->
-                    <div class="chart-container card p-3 m-3">
-                        <h2>Monthly Membership Growth</h2>
-                        <canvas id="membershipChart"></canvas>
+            <div class="container-fluid" style="visibility: hidden;" id="main-content">
+            <div class="row justify-content-center">
+                
+                <!-- Welcome Section -->
+                <section class="col-md-12 col-lg-10 px-md-4 mt-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="welcome-message text-center">
+                                <br>
+                                <h1>Welcome to DEMM FITNESS GYM</h1>
+                                <p class="lead">Your journey to a healthier, stronger, and more energized you starts here!</p>
+                                <p>Explore our exclusive membership plans, personalized workout programs, and expert-led training sessions designed for all fitness levels.</p>
+                                <a href="/membership" class="btn btn-primary btn-lg">Join Now</a>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="chart-container card p-3 m-3">
-                        <h2>Gym Equipment Usage</h2>
-                        <canvas id="equipmentChart"></canvas>
+
+                    <!-- Features Section -->
+                    <div class="row mt-5 justify-content-center">
+                        <div class="col-md-4 text-center">
+                            <div class="feature-box">
+                                <i class="fas fa-dumbbell fa-3x mb-3"></i>
+                                <h3>Strength Training</h3>
+                                <p>Build muscle and improve strength with our top-of-the-line equipment and expert guidance.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="feature-box">
+                                <i class="fas fa-running fa-3x mb-3"></i>
+                                <h3>Cardio Workouts</h3>
+                                <p>Boost your endurance with our cardio sessions, from running to cycling and everything in between.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="feature-box">
+                                <i class="fas fa-yoga fa-3x mb-3"></i>
+                                <h3>Yoga & Flexibility</h3>
+                                <p>Enhance flexibility, balance, and relaxation with our yoga classes designed for all levels.</p>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="chart-container card p-3 m-3">
-                        <h2>Daily Check-ins</h2>
-                        <canvas id="checkinsChart"></canvas>
+
+                    <!-- Testimonial Section -->
+                    <div class="row mt-5 justify-content-center">
+                        <div class="col-md-12 text-center">
+                            <h2>What Our Members Say</h2>
+                            <p class="testimonial-quote">"DEMM Fitness Gym has transformed my fitness journey. The trainers are so supportive, and the environment is incredibly motivating!" - John Doe</p>
+                        </div>
                     </div>
-                </div>
-            </main>
+                </section>
+            </div>
         </div>
     </div>
 
-    <!-- Include Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- External JS and FontAwesome -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Font Awesome Icons -->
+
+    <!-- JavaScript to Show Content After Loading -->
     <script>
-        // Membership Growth Chart
-        const membershipCtx = document.getElementById('membershipChart').getContext('2d');
-        const membershipChart = new Chart(membershipCtx, {
-            type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-                datasets: [{
-                    label: 'Members',
-                    data: [30, 45, 60, 80, 100, 150],
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 2,
-                    fill: false
-                }]
-            }
-        });
-
-        // Gym Equipment Usage Chart
-        const equipmentCtx = document.getElementById('equipmentChart').getContext('2d');
-        const equipmentChart = new Chart(equipmentCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Treadmill', 'Bike', 'Dumbbells', 'Bench Press', 'Rowing Machine'],
-                datasets: [{
-                    label: 'Usage Count',
-                    data: [50, 30, 40, 20, 25],
-                    backgroundColor: 'rgba(153, 102, 255, 0.6)',
-                    borderColor: 'rgba(153, 102, 255, 1)',
-                    borderWidth: 1
-                }]
-            }
-        });
-
-        // Daily Check-ins Chart
-        const checkinsCtx = document.getElementById('checkinsChart').getContext('2d');
-        const checkinsChart = new Chart(checkinsCtx, {
-            type: 'pie',
-            data: {
-                labels: ['Morning', 'Afternoon', 'Evening'],
-                datasets: [{
-                    data: [40, 35, 25],
-                    backgroundColor: ['rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(255, 206, 86, 0.6)']
-                }]
-            }
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("main-content").style.visibility = "visible";
         });
     </script>
 
-<div class="chart-container card p-3 m-3">
-    <h2>Instructors by Department</h2>
-    <canvas id="instructorChart"></canvas>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        fetch('/instructor/data')
-            .then(response => response.json())
-            .then(data => {
-                const labels = data.map(item => item.department);
-                const counts = data.map(item => item.count);
-
-                const instructorCtx = document.getElementById('instructorChart').getContext('2d');
-                new Chart(instructorCtx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'Instructors by Department',
-                            data: counts,
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.6)',
-                                'rgba(54, 162, 235, 0.6)',
-                                'rgba(75, 192, 192, 0.6)',
-                                'rgba(153, 102, 255, 0.6)',
-                                'rgba(255, 159, 64, 0.6)'
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        plugins: {
-                            legend: {
-                                position: 'top',
-                            },
-                            title: {
-                                display: true,
-                                text: 'Instructors by Department'
-                            }
-                        }
-                    }
-                });
-            })
-            .catch(error => console.error('Error fetching instructor data:', error));
-    });
-</script>
-
     <style>
-        /* Align the main container */
-        .main-container {
-            display: flex;
-            margin-top: 56px; /* Add margin to avoid overlapping nav */
-            background-color: #DFF6DD; /* Light green background for the whole page */
-        }
-
-        /* Sidebar styling */
+        /* General Styles */
         #sidebar {
-            flex-shrink: 0;
-            height: 100vh;
-            background-color: #2E7D32; /* Green sidebar background */
-            color: #A9D08E; /* Light green text color */
-            width: 250px;
             position: fixed;
-            top: 56px; /* Adjust to match height of nav.php */
+            top: 70px; /* Adjusted to avoid overlap with navbar */
             left: 0;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            height: 100%; /* Full height */
+            background-color: #343a40;  /* Dark background */
+            color: #A9D08E; /* Text color */
+            padding-top: 10px;
+            z-index: 1000; /* Ensure it stays above other content */
+            overflow-y: auto; /* Allow scroll if sidebar content overflows */
         }
 
         #sidebar .nav-link {
-            color: #A9D08E; /* Light green text color */
+            color:rgb(255, 255, 255); /* Light green text color */
             font-weight: bold;
             padding: 10px 15px;
             border-radius: 5px;
@@ -184,57 +116,110 @@ include APP_DIR . 'views/templates/header.php';
             background-color: #555;
         }
 
-        /* Content area styling */
-        .content {
-            margin-left: 250px;
-            padding: 20px;
-            flex: 1;
-            background-color: #ffffff; /* White background for content */
-            color: #343a40; /* Dark text color */
-            margin-top: 10vh;
+        /* Main content styling */
+        .main-content {
+            margin-left: 1px; 
+            margin-right: 150px;
+            background: linear-gradient(to bottom, #d4f1d4, #9acb8c, #ffffff); /* Green gradient background */
+            padding-top: 20px;
+            min-height: 100vh;
+            color: black;
+            overflow-y: auto;
+        }
+        body{
+            background: linear-gradient(to bottom, #d4f1d4, #9acb8c, #ffffff);
         }
 
-        /* Chart container styling */
-        .chart-container {
-            width: calc(33% - 40px);
-            min-width: 300px;
-            max-width: 500px;
+        /* Card styling */
+        .card {
+            border: none;
+            border-radius: 10px;
+        }
+
+        .card-header {
+            font-weight: bold;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F1F1F1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-fluid {
+            padding: 0 15px;
+        }
+
+        /* Welcome Section */
+        .welcome-message {
+            background-color: #4CAF50;
+            color: white;
+            padding: 50px 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .welcome-message h1 {
+            font-size: 3rem;
+        }
+
+        .welcome-message .lead {
+            font-size: 1.5rem;
             margin-bottom: 20px;
         }
 
-        .card {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: inherit;
+        /* Blue Button Styles */
+        .btn-primary {
+            background-color: #007BFF; /* Bootstrap primary blue */
+            border-color: #007BFF;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            color: white;
+            transition: background-color 0.3s ease;
         }
 
-        /* Dashboard title */
-        h1 {
-            color: #2E7D32; /* Dark green for the main title */
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue for hover */
         }
 
-        /* Visualization section */
-        .dashboard-content {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+        /* Features Section */
+        .feature-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Custom styling for charts and their titles */
-        .chart-container h2 {
-            color: #2E7D32; /* Green color for chart titles */
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
 
-        /* Responsive design for small screens */
-        @media (max-width: 768px) {
-            .chart-container {
-                width: 100%;
-            }
+        .feature-box i {
+            color: #4CAF50;
+        }
 
-            #sidebar {
-                width: 200px;
-            }
+        .feature-box h3 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .feature-box p {
+            color: #666;
+        }
+
+        /* Testimonial Section */
+        .testimonial-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #4CAF50;
         }
     </style>
 </body>
